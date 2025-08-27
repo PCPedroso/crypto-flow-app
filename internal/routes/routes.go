@@ -1,16 +1,23 @@
 package routes
 
 import (
-    "net/http"
-    "github.com/gorilla/mux"
-    "crypto-transaction-app/internal/handlers"
+	"net/http"
+	"text/template"
+
+	"github.com/gorilla/mux"
 )
 
-func SetupRoutes() *mux.Router {
-    router := mux.NewRouter()
+// SetupRoutes configura as rotas para a aplicação
+func SetupRoutes(r *mux.Router) {
+	r.HandleFunc("/", homeHandler).Methods("GET")
+}
 
-    router.HandleFunc("/transaction", handlers.HandleTransaction).Methods("POST")
-    router.HandleFunc("/health", handlers.HandleHealthCheck).Methods("GET")
-
-    return router
+// homeHandler exibe a página principal (index.html)
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("public/index.html")
+	if err != nil {
+		http.Error(w, "Não foi possível carregar a página.", http.StatusInternalServerError)
+		return
+	}
+	tmpl.Execute(w, nil)
 }

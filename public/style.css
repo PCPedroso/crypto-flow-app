@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* Light text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #212121; /* Darker header */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #00bcd4; /* Accent color */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00bcd4; /* Accent color on hover */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.status-card h3 {
+    margin-top: 0;
+    color: #00bcd4; /* Accent color */
+}
+
+.quick-actions button {
+    background-color: #00bcd4; /* Accent color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-actions button:hover {
+    background-color: #008ba7; /* Darker accent color on hover */
+}
+
+footer {
+    background-color: #212121; /* Darker footer */
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #333;
+}
