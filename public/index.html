@@ -5,13 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Flow App</title>
     <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Estilos para o pop-up */
+        .wallet-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .wallet-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .wallet-popup button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Crypto Flow App</h1>
         <nav>
             <a href="#">Transações</a>
-            <a href="#">Carteiras</a>
+            <a href="#" id="openWalletPopup">Carteiras</a>
             <a href="#">Relatórios</a>
             <a href="#">Configurações</a>
         </nav>
@@ -34,5 +68,41 @@
     <footer>
         <p>&copy; 2025 Crypto Flow App</p>
     </footer>
+
+    <!-- Pop-up para conectar carteiras -->
+    <div class="wallet-popup" id="walletPopup">
+        <div class="wallet-popup-content">
+            <h3>Conectar Carteira</h3>
+            <button id="connectMetaMask">MetaMask</button>
+            <button id="connectPhantom">Phantom</button>
+            <button id="connectBackpack">Backpack</button>
+            <button id="closeWalletPopup">Fechar</button>
+        </div>
+    </div>
+
+    <script type="module" src="/static/scripts/wallet-connector.js"></script>
+    <script type="module">
+        import { setupMetaMask, setupPhantom, setupBackpack } from '/static/scripts/wallet-connector.js';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const openWalletPopupButton = document.getElementById('openWalletPopup');
+            const closeWalletPopupButton = document.getElementById('closeWalletPopup');
+            const walletPopup = document.getElementById('walletPopup');
+
+            openWalletPopupButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Evita que o link redirecione
+                walletPopup.style.display = 'block';
+            });
+
+            closeWalletPopupButton.addEventListener('click', function() {
+                walletPopup.style.display = 'none';
+            });
+
+            // Adiciona os event listeners para cada carteira
+            setupMetaMask(walletPopup);
+            setupPhantom(walletPopup);
+            setupBackpack(walletPopup);
+        });
+    </script>
 </body>
 </html>

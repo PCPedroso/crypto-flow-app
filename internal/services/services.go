@@ -1,8 +1,8 @@
 package services
 
 import (
+	"crypto-flow-app/internal/models"
 	"errors"
-	"crypto-transaction-app/internal/models"
 )
 
 func ProcessTransaction(transaction models.Transaction) (string, error) {

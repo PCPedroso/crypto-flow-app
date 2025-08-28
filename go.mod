@@ -1,4 +1,4 @@
-module crypto-transaction-app
+module crypto-flow-app
 
 go 1.18
 

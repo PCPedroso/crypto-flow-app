@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crypto-transaction-app/internal/routes"
+	"crypto-flow-app/internal/routes"
 	"log"
 	"net/http"
 
