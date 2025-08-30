@@ -2,9 +2,9 @@ export function setupBackpack(walletPopup) {
     const connectBackpackButton = document.getElementById('connectBackpack');
 
     connectBackpackButton.addEventListener('click', async function() {
-        if (window.hasOwnProperty('backpack') && typeof window.backpack.xnft !== 'undefined') {
+        if (window.backpack !== 'undefined' && typeof window.backpack.solana !== 'undefined') {
             try {
-                const resp = await window.backpack.xnft.connect();
+                const resp = await window.backpack.solana.connect()
                 const publicKey = resp.publicKey.toString();
                 console.log('Backpack conectado! Conta:', publicKey);
                 alert('Backpack conectado! Conta: ' + publicKey);
