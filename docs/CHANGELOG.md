@@ -1,15 +1,15 @@
 # CHANGELOG
 
-All notable changes to this project will be documented in this file.
+Filepath: docs/CHANGELOG.md
+Purpose: Histórico de mudanças relevantes do projeto.
+Owner: @dev
+Status: IN_PROGRESS
+Created: 2025-08-30
+Updated: 2025-08-30
 
-## 0.1.0 — Initial (current)
-- Implemented Go HTTP server and static file serving.
-- Implemented frontend `index.html` with wallet popup UI.
-- Implemented ES module connectors:
-  - MetaMask (metamask.js)
-  - Phantom (phantom.js)
-  - Backpack (backpack.js) — detection bug fixed.
-- Added `wallet-connector.js` as central ES module export.
-- Added initial documentation and split docs into `docs/` files.
+## 0.1.0 — Initial
+- Go server + static file serving
+- Frontend: wallet popup + ES modules (metamask, phantom, backpack)
+- Created docs split and templates
 
-(Use semantic versioning
+(Atualizar a cada merge significativo)

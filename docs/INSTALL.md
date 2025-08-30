@@ -1,5 +1,12 @@
 # INSTALL / INSTALAÇÃO
 
+Filepath: docs/INSTALL.md
+Purpose: Instruções para instalar e executar a aplicação localmente (Windows e Linux).
+Owner: @dev
+Status: DONE
+Created: 2025-08-30
+Updated: 2025-08-30
+
 PT-BR
 ----
 
@@ -43,3 +50,7 @@ Run steps (Windows):
    ```
    http://localhost:8080/
    ```
+
+Short checklist
+- [ ] Verificar variáveis de ambiente (se houver)
+- [ ] Confirmar portas livres (8080)
